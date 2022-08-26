@@ -1,26 +1,29 @@
 import React, {useState} from 'react';
 import styles from './SearchResult.module.scss';
+import { Pokemon } from 'pokenode-ts';
 
-const SearchResult = () => {
-    const [selectPokemon, setSelectPokemon] = useState<boolean>(false);
+type SearchResultProps = {
+    selectedPokemon: Pokemon | any;
+}
+const SearchResult = ({selectedPokemon}: SearchResultProps) => {
+    console.log('pokemanz', selectedPokemon);
     return (
         <div className={styles['poke-result-card']}>
-        {
-                selectPokemon ?
-                    (
-                        <>
-                            {/* image here */}
-                            <p>Name: Pikachu</p>
-                            <p>Id: id!</p>
-                            <p>Height: ???</p>
-                            <p>Weight: ???</p>
-                            <p>Base Exp: 9000</p>
-                        </>
-                    )
-                    :
-                        <>
-                            <h2>Welcome to the Pokedex!</h2>
-                        </>
+        {selectedPokemon ?
+                (
+                    <>
+                        <img src={selectedPokemon.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={selectedPokemon.name} />
+                        <h2>{selectedPokemon.name}</h2>
+                        <p>Id: {selectedPokemon.id}</p>
+                        <p>Height: {selectedPokemon.height}</p>
+                        <p>Weight: {selectedPokemon.weight}</p>
+                        <p>Base Exp: {selectedPokemon.base_experience}</p>
+                    </>
+                )
+                :
+                    <>
+                        <h2>Welcome to the Pokedex!</h2>
+                    </>
         }
        </div>
     )
