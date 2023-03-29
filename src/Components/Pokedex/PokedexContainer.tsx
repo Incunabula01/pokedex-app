@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import SearchBox from '../Search/SearchBox';
 import PokeList from './Pokelist';
@@ -8,8 +8,6 @@ import styles from './PokedexContainer.module.scss';
 import { asyncLoader } from '../../utils';
 
 import { PokemonClient, Pokemon, NamedAPIResource, NamedAPIResourceList } from "pokenode-ts";
-
-
 
 const PokedexContainer = () => {
     const [pokemonList, setPokemonList] = useState<Array<NamedAPIResource>>([]);

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './SearchResult.module.scss';
 import { Pokemon } from 'pokenode-ts';
 

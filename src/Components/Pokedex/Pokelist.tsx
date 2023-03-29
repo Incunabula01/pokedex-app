@@ -10,7 +10,7 @@ type PokeListProps = {
 }
 
 const PokeList = ({ pokeData, onSelect }: PokeListProps)  => {
-    // if(pokeData.length > 0){
+
         return (
             <ul className={styles['poke-list-grid']}>
                 {pokeData.map((el, i) => {
@@ -22,8 +22,7 @@ const PokeList = ({ pokeData, onSelect }: PokeListProps)  => {
                 })}
             </ul>
         )
-    // }
-    // return <p>No Pokemans!!11</p>
+
     
 }
 
