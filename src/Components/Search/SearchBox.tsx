@@ -5,7 +5,6 @@ type SearchBoxProps = {
     onQueryChange: (query: string) => void;
 }
 
-
 const SearchBox = ({ onQueryChange }: SearchBoxProps) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>)=> {
         onQueryChange(event.currentTarget.value);
